@@ -1,0 +1,38 @@
+{
+  "name": "wefit-test",
+  "version": "0.0.64",
+  "main": "index.js",
+  "author": "",
+  "license": "",
+  "private": true,
+  "workspaces": [
+    "container",
+    "list",
+    "cart",
+    "success"
+  ],
+  "scripts": {
+    "start": "lerna run --parallel start",
+    "postbuild": "bash postbuild.sh",
+    "build": "lerna run build",
+    "ci:build": "npm run build && bash postbuild.sh",
+    "serve": "lerna run --parallel serve",
+    "clean": "lerna run --parallel clean",
+    "prepare": "lerna run yarn",
+    "test": "lerna run test --no-parallel",
+    "lint": "lerna run lint"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "lerna": "3.22.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "directory": "build"
+  },
+  "dependencies": {
+    "node-gyp": "^10.2.0"
+  }
+}
