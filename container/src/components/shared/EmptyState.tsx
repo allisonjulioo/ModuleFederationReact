@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import empty from '../../assets/empty.png';
-import { Button } from './Button';
+import { Anchor } from './Anchor';
 import { Card } from './Card';
 
 const Content = styled.div`
@@ -14,8 +14,8 @@ const Content = styled.div`
   min-height: 50vh;
   text-align: center;
 
-  button {
-    max-width: 200px;
+  a {
+    max-width: 210px;
   }
 
   @media (max-width: 981px) {
@@ -24,16 +24,12 @@ const Content = styled.div`
 `;
 
 export const EmptyState = () => {
-  const handleReloadPage = () => {
-    window.location.reload();
-  };
-
   return (
     <Card>
       <Content>
         <h2>Parece que não há nada por aqui :(</h2>
         <img src={empty} alt="vazio" />
-        <Button onClick={handleReloadPage}>Recarregar página</Button>
+        <Anchor to='/'>Recarregar página</Anchor>
       </Content>
     </Card>
   );
